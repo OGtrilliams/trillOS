@@ -1,0 +1,91 @@
+.fa-brands {
+    padding: 5px;
+}
+.fa-etsy {
+    background-color: darkorange;
+    color: white;
+}
+.fa-bluesky {
+    background: skyblue;
+    color: white;
+}
+.fa-youtube {
+    color: red;
+    background: white;
+}
+.fa-linkedin {
+    color: rgb(6, 6, 175);
+}
+.fa-github {
+    color: black;
+}
+.fa-twitch {
+    color: purple;
+}
+.fa-dev {
+
+    color: black;
+}
+.fa-folder {
+    color: skyblue;
+}
+.fa-envelope, .fa-wifi {
+    color: white;
+}
+.fa-gear {
+    color: #272727;
+}
+
+.dropdown {
+    position: relative;
+    display: block;
+  }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #777;  /* Light grey background */
+    color: #333;  /* Dark text for better readability */
+    border-radius: 6px;  /* Softer rounded corners */
+    min-width: 180px;  /* A little wider to accommodate text */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+    padding: 8px 12px;  /* Slightly less padding */
+    z-index: 1;
+    bottom: 100%;  /* Position dropdown above the trigger element */
+    left: 0;  /* Align left edge of the dropdown with the trigger */
+    margin-top: 5px;  /* Small margin to create space between dropdown and trigger */
+    border: 1px solid #999;  /* Light border for definition */
+    font-size: 14px;  /* Slightly smaller font */
+  }
+  
+  .dropdown-content a {
+    color: #555;  /* Dark text */
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;  /* Rounded corners for individual items */
+    transition: background-color 0.2s ease;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #555555ae;  /* Slight hover effect */
+  }  
+  .dropdown:hover .dropdown-content {
+    display: inline-block;
+  }
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    /*padding: 12px 16px;*/
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown
+  .dropdown:hover .dropbtn {
+    background-color: #999;
+  }*/
