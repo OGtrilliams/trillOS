@@ -1,0 +1,51 @@
+locale: en-US
+date_format: "%B %-d, %Y"
+encoding: utf-8 # Make sure the encoding is right
+lang: en-US # Set the site language
+title: "trillOS" # Site name or title, also used in jekyll-seo-tag
+logo: "/assets/logos/logo.svg" # Site logo, also used in jekyll-seo-tag
+description: "CentOS desktop inspired layout" # Site description and default description, also used in jekyll-seo-tag
+url: "https://trilliams.sh" # Site url, also used in jekyll-seo-tag
+baseurl: ""
+repo: "https://github.com/OGtrilliams/trillOS/"
+email: "tribecca@tribecc.us"
+logo: assets/images/logo.png
+github_username: OGtrilliams
+
+exclude:
+- README.md
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- screenshot.png
+- LICENSE
+- CNAME
+- Gemfile
+- Gemfile.lock
+- alembic-jekyll-theme.gemspec
+- .jekyll-cache
+
+include:
+- [".htaccess"]
+
+favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
+  16: '/assets/images/favicon-16x16.png'
+  32: '/assets/images/favicon-32x32.png'
+
+# copyright
+copyright: "Copyright 2024 - ∞ ♡*trilliams*♡"
+
+# Build settings
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+
+  # Enable pagination
+paginate: 8  # amount of posts to show per page
+paginate_path: /page:num/
+
+# enable search
+
+search_full_content: true
