@@ -1,0 +1,30 @@
+<div class="wrapper inldex-columns">
+ 
+    <div class="index-itjems">
+      {% for item in site.data.navigation %}
+      <div class="iktem-link" name="item-link">
+        <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
+            <div class="indgex-txt">{{ item.name }}</div>
+        </a>
+        
+      </div>
+      
+        
+      {% endfor %}
+    </div>
+  
+    <div class="inpdex-posts">
+      {% if site.posts.size > 0 %}
+      {% for post in site.posts %}
+      <div class="post-liknk" name="post-link">
+      <a href="{{ post.url }}">
+        <div class="index-title">{{ post.title | downcase }}.txt</div>
+      </a>
+        </div>
+      
+        {% endfor %} 
+        {% endif %}  
+    
+        </div>
+   
+  </div> 

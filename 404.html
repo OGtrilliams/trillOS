@@ -13,7 +13,7 @@ body {
   .error-body {
     background: grey;
     width: 100%;
-    border: 5px solid black;
+    border: 2px solid black;
     box-shadow: 20px 10px 10px black;
   }
   .error-head {
@@ -38,6 +38,10 @@ body {
     width: 50px;
     padding: 5px;
   }
+  .border {
+    border: 1px solid black;
+    border-bottom: 0;
+  }
   button {
     border: 2px solid grey;
     color: lightgrey;
@@ -53,7 +57,7 @@ body {
 <div class="welcome"><h1>Welcome to trillOS for x86_64</h1></div>
 <div class="container">
   <div class="error-body">
-    <div class="error-head">[ 404 ]</div>
+    <div class="error-head"><label class="bordoer">[  404  ]</label></div>
     <div class="error-text">  <p><strong>Page not found :(</strong></p>
       <p>The requested page could not be found.</p></div>
       <div class="backbutton"><button><a onclick="window.history.back()">Back</a></button></div>

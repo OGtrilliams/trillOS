@@ -1,19 +1,34 @@
  <footer>
-    <div id="menu" class="dropdown-content"><ul>
-        <!-- Etsy -->
-         <li> <button class="button-footer"><a href="https://etsy.com/OGtrilliams" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-etsy"></i></a>Etsy</button></li>
-        <!-- Bluesky -->
-        <li><button class="button-footer"><a href="https://bsky.app/profile/stilltrill.bsky.social" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-bluesky"></i></a>Bluesky</button></li>
-       
-        <!-- YouTube -->
-        <li><button class="button-footer"><a href="https://youtube.com/OGtrilliams" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>YouTube</button></li>
-       
-        <!-- Linkedin -->
-        <li><button class="button-footer"><a href="https://linkedin.com/in/trilliams" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>LinkedIN</button></li>
-        <!-- Github -->
-    <li><button class="button-footer"><a href="https://github.com/OGtrilliams" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>Github</button></li>
-        <li><button class="button-footer"><a href="https://twitch.com/OGtrilliams" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitch"></i></a>Twitch</button></li>
-            <li><button><div class="button-footer"><a href="https://dev.to/OGtrilliams" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-dev"></i></a></div>dev.to</button></li>
-      </div>
-    </ul>
-  </footer>
+ <div class="container">
+        <div name="toolbar" class="toolbar-bottom">
+            <div class="dropdown">
+                <button><i class="fa-solid fa-gear"></i>Menu</button>
+
+                  <div id="menu" class="content">
+                      <!-- Etsy -->
+                    <a href="https://etsy.com/OGtrilliams" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-etsy"></i>Etsy</a>
+                      <!-- Bluesky -->
+                    <a href="https://bsky.app/profile/stilltrill.bsky.social" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-bluesky"></i>Bluesky</a>
+                     
+                      <!-- YouTube -->
+                    <a href="https://youtube.com/OGtrilliams" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i>YouTube</a>
+                     
+                      <!-- Linkedin -->
+                    <a href="https://linkedin.com/in/trilliams" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i>LinkedIN</a>
+                      <!-- Github -->
+                    <a href="https://github.com/OGtrilliams" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i>Github</a>
+                   <a href="https://twitch.com/OGtrilliams" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitch"></i>Twitch</a>
+                    <a href="https://dev.to/OGtrilliams" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-dev"></i>dev.to</a></div>
+                  </div>
+                  <div type="contact" class="toolbar-right"><div class="bugreport"><i class="fa-solid fa-bugs"></i>Report Bugs</div>
+                  <a href="/feed.xml"><i class="fas fa-wifi"></i></a> 
+                  <a href="mailto:hello@trilliams.sh"><i class="fa-solid fa-envelope" subject="hey there" name="email"></i></a>
+                  
+                  <div class="menu-time">
+                      {{ site.time | date: '%a %b %d %Y %H:%M' }}
+                  </div>
+              </div>
+            </div>        
+        
+     </div> 
+    </footer>

@@ -1,5 +1,169 @@
 ---
-layout: default
+layout: post
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include head.html %}
+<style>
+    .blog-container {
+        min-width: 900px;
+        max-width: 1400px;
+        height: 90vh;
+        margin: 20px auto;      
+    }
+    .content {
+        background: whitesmoke;
+        border: 1px solid grey;
+        padding: 20px;   
+    }
+    .tulbar {
+        background: grey;  
+        width: 100%;
+    }
+    .folder-2 {
+        background: rgb(180, 179, 179);
+    }
+    .mb-left button {
+        background: lightgrey;
+        border: 1px solid #212121;
+        display: inline;
+        margin-right: 5px;
+    }
+    .mb-right button {
+        background: lightgrey;
+        border: 1px solid #212121;
+        padding: 0 15px;
+    }
+    .button-open, .button-new, .mb-lines, .mb-save {
+        height: 40px;
+        border: 1px solid grey;
+        border-radius: 5px;
+    }
+    .button-open, .mb-save {
+        padding: 10px;
+    }
+    .pad {
+        padding-left: 15px;
+        color: #212121;
+    }
+    .button-new, .mb-lines {
+        width: 50px;
+    }
+    .other-buttons button {
+        border: 0;
+        background: transparent;
+    }
+    .mb-right {
+        display: inline-block;
+    }
+    .mb-right button {
+        border: 1px solid rgb(113, 112, 112);
+        padding 0 10px;
+    }
 
-{{ content }}
+  .dropdwn {
+    display: inline-block;
+  }
+
+  .dropdwn a {
+    color: #212121;
+    display: block;
+    text-decoration: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .dropdwn .content {
+    display: none;
+    background: lightgrey;
+    position: absolute;
+    box-shadow: 0 8px 16px 0 #FFFFFF;
+  }
+  .dropdwn:hover .content {
+    display: block;
+  }
+  .dropdwn:hover button {
+    background: grey;
+    color: whitesmoke;
+  }
+  .dropdwn a:hover {
+    background: #212121;
+  }
+  .file {
+    font-weight: bold;
+  }
+    label {
+        color: #212121;
+        font-weight: bold;
+    }
+    h1, h2, h3, h4 {
+        color: darkred;
+    }
+    p {
+  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.825rem + 0.25vw, 1.125rem);
+  color: blue;
+  text-align: justify;
+  display: inline-block;
+}
+.bt-bottom {
+    display: inline-flex;
+}
+
+iframe {
+    margin: 0 auto;
+    float: inline-end;
+}
+</style>
+</head>
+<body>
+ 
+<div class="wrapper">
+    <div class="blog-container">
+            
+            <div class="folder-2">
+                <div class="mb-left">
+                    <div class="dropdwn">
+                        <button name="mb-open" class="button-open">Open<i class="fa-solid fa-angle-down"></i></button>
+                <div class="content">
+                    <div class="file">File</div>
+                    {% include postlist.html %}
+                </div>
+                    </div>
+                
+                <button name="button-new" class="button-new"><i class="fa-regular fa-square-plus"></i></button>
+            </div>
+                    <label name="title" class="title">{{ page.title }}</label>
+                    <div class="other-buttons">
+                        <div class="mb-right" name="menu-blog-right">
+                            <button name="save" class="mb-save">Save</button>
+                            <button name="mb-lines" class="mb-lines"><i class="fa-solid fa-bars"></i></button> 
+                        </div>
+                        
+                    <button name="mini"><i class="fa-solid fa-window-minimize"></i></button>
+                    <button name="max"><i class="fa-regular fa-window-maximize"></i></button>
+                    <button name="close"><i class="fa-solid fa-xmark"></i></button>
+                </div>                  
+                 </div>
+            <div class="content scrollable">
+                {{ content }}
+            </div>
+           
+            <div class="folder-6">
+                <div class="bt-bottom">
+                    <div class="blog-type pad">TXT<i class="fa-solid fa-angle-down"></i></div>
+                    <div class="width pad">Width: <i class="fa-solid fa-angle-down"></i></div> 
+                    <div class="line pad">Ln 1, Col 1</div> 
+                    <div class="down pad"><i class="fa-solid fa-angle-down"></i></div> 
+                    <div class="state pad">INS</div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+   {% include footer.html %}
+</body>
+</html>
+

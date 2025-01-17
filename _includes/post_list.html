@@ -1,19 +1,26 @@
-<div class="post-list">{% if site.posts.size > 0 %}
-  <ul>
-    {% for post in site.posts %}
-      <li><div class="postlist-perms">-rw-rw-r--</div><div class="postlist-user">trilliams trilliams</div>
-        <div class="postlist-date">{{ post.date | date: "%a %b %d %Y"  }}</div> <a href="{{ post.url }}">{{ post.title | downcase }}</a>
-      </li>
-    {% endfor %}
+<div class="wrapper index-columns">
+ 
+  <div class="index-items">
+    {% for item in site.data.navigation %}
+    <div class="item-link" name="item-link">
+      <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}><i class="fa-regular fa-file-code xl"></i></a>
+      <div class="index-txt">{{ item.name }}</div>
+    </div>
     
-
-      {% for item in site.data.navigation %}
-      <li><div class="nav-perms">drwxrw-r--</div> <div class="nav-user">trilliams trilliams</div> <div class="nav-date">{{ "now" | date: "%a %b %d %Y"}}</div>
-     <span class="nav-dir"><a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a></span> 
-    </li>
-     {% endfor %}
-  </ul>
+      
+    {% endfor %}
   </div>
+
+  <div class="index-posts">
+    {% if site.posts.size > 0 %}
+    {% for post in site.posts %}
+    <div class="post-link" name="post-link">
+    <a href="{{ post.url }}"><i class="fa-regular fa-file-lines xl"></i></a>
+      <div class="index-title">{{ post.title | downcase }}.txt</div></div>
+    
+      {% endfor %} 
+      {% endif %}  
   
-{% endif %}
-</div>
+      </div>
+ 
+</div> 

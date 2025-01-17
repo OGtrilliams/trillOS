@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{page.title}}</title>
+
     {% include head.html %}
-</head>
+
 <body>
+    <div class="container" name="index-default">
 
-    <h1>{{ page.title }}</h1>
-    {{ content }}
+<div class="folder-1">
+    <div class="folder-2"><label name="title" class="title">{{ page.title }}</label>
+    <div class="other-buttons">
+        <button name="mini"><i class="fa-solid fa-window-minimize"></i></button>
+        <button name="max"><i class="fa-regular fa-window-maximize"></i></button>
+        <button name="close"><i class="fa-solid fa-xmark"></i></button></div>
+     </div>
+        <div class="folder-3"> 
+            <div class="navi buttons">
+                <button name="file">File</button>
+                <button name="edit">Edit</button>
+                <button name="view">View</button>
+                <button name="go">Go</button>
+                <button name="bookmarks">Bookmarks</button>
+                <button name="help">Help</button></div>
+            <div class="toolbar">
+                <a onclick="window.history.back()"><i class="fa-solid fa-angles-left"></i></a>
+                <i class="fa-solid fa-angles-right"></i>
+                <i class="fa-solid fa-arrow-up-long"></i>
+                <i class="fa-solid fa-arrow-rotate-right"></i> 
+                <i class="fa-solid fa-grip-lines-vertical"></i>
+                <i class="fa-solid fa-house"></i> <label>Location:</label> <textarea readonly cols="30" rows="1" placeholder="/home/trilliams" id="text" name="dud"></textarea><i class="fa-solid fa-magnifying-glass"></i> </div>
+            <div class="folder-body">
+            <div class="folder-4 scrollable"> 
+                <div class="mycompy"><i class="fa-solid fa-sort-down"></i>My Computer</div>
+                <div class="sidebar" name="home"><i class="fa-solid fa-folder-closed"></i>Home</div>
+            <div class="sidebar"><i class="fa-solid fa-folder-open"></i>Desktop</div>
+            <div class="sidebar"><i class="fa-solid fa-folder-closed"></i>Documents</div>
+            <div class="sidebar"><i class="fa-solid fa-folder-closed"></i>Images</div>
+            <div class="sidebar"><i class="fa-solid fa-folder-closed"></i>Applications</div>
+            <div class="sidebar"><i class="fa-solid fa-folder-closed"></i>trilliams</div>
+            <div class="sidebar"><i class="fa-solid fa-folder-closed"></i>Placeholder2</div>
+            <div class="sidebar"><i class="fa-solid fa-folder-closed"></i>Placeholder3</div>
+        </div>
+        <div class="folder-5 scrollable">
+            {{ content }}
+        </div> 
+            </div>
+          </div> 
+          <div class="folder-6"></div>
+</div>
+    </div>
 
-{% include footer.html %}
+       
+    {% include footer.html %}
 </body>
 </html>
