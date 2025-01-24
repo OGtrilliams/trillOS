@@ -1,169 +1,122 @@
 ---
-layout: post
+layout: page
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% include head.html %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% include head.html %}
-<style>
-    .blog-container {
-        min-width: 900px;
-        max-width: 1400px;
-        height: 90vh;
-        margin: 20px auto;      
-    }
-    .content {
-        background: whitesmoke;
-        border: 1px solid grey;
-        padding: 20px;   
-    }
-    .tulbar {
-        background: grey;  
-        width: 100%;
-    }
-    .folder-2 {
-        background: rgb(180, 179, 179);
-    }
-    .mb-left button {
-        background: lightgrey;
-        border: 1px solid #212121;
-        display: inline;
-        margin-right: 5px;
-    }
-    .mb-right button {
-        background: lightgrey;
-        border: 1px solid #212121;
-        padding: 0 15px;
-    }
-    .button-open, .button-new, .mb-lines, .mb-save {
-        height: 40px;
-        border: 1px solid grey;
-        border-radius: 5px;
-    }
-    .button-open, .mb-save {
-        padding: 10px;
-    }
-    .pad {
-        padding-left: 15px;
-        color: #212121;
-    }
-    .button-new, .mb-lines {
-        width: 50px;
-    }
-    .other-buttons button {
-        border: 0;
-        background: transparent;
-    }
-    .mb-right {
-        display: inline-block;
-    }
-    .mb-right button {
-        border: 1px solid rgb(113, 112, 112);
-        padding 0 10px;
-    }
-
-  .dropdwn {
-    display: inline-block;
+    <title> {{ page.title }} </title>
+    <style>
+  *,
+  *:before,
+  *:after {
+    margin: 0;
+    padding: 0;
+  }  
+  body {
+    background: #121212; /* Dark solid background for the overall page */
+    font-family: "Fira Code", Monaco, Consolas, "Ubuntu Mono", monospace;
+    color: #121212;
+    line-height: 1.54rem;
+    height: 100vh;
+    box-sizing: border-box;
   }
-
-  .dropdwn a {
-    color: #212121;
-    display: block;
-    text-decoration: none;
-    padding: 5px 10px;
-    cursor: pointer;
+  select {
+    width: 125px;
   }
-  .dropdwn .content {
-    display: none;
-    background: lightgrey;
-    position: absolute;
-    box-shadow: 0 8px 16px 0 #FFFFFF;
-  }
-  .dropdwn:hover .content {
-    display: block;
-  }
-  .dropdwn:hover button {
-    background: grey;
-    color: whitesmoke;
-  }
-  .dropdwn a:hover {
-    background: #212121;
-  }
-  .file {
-    font-weight: bold;
-  }
-    label {
-        color: #212121;
-        font-weight: bold;
-    }
-    h1, h2, h3, h4 {
-        color: darkred;
-    }
-    p {
-  font-size: 0.875rem;
-  font-size: clamp(0.875rem, 0.825rem + 0.25vw, 1.125rem);
-  color: blue;
-  text-align: justify;
-  display: inline-block;
-}
-.bt-bottom {
-    display: inline-flex;
-}
-
-iframe {
+  .container {
+    display: grid;
+    grid-template-rows: 70px 70px 500px 40px;
+    grid-template-columns: 1fr 3fr;
+    width: 85%;
     margin: 0 auto;
-    float: inline-end;
-}
-</style>
+  }
+  .gedit {
+    border-radius: 5px;
+  }
+  .gedit button {
+    width: 40px;
+  }
+  .gedit-toolbar, .gedit-browser, .gedit-subnav, .gedit-bottom {
+    background: lightgrey;
+  }
+  .gedit-content {
+    background: whitesmoke;
+  }
+  .gedit-browser-subnav {
+    background: lightgray;
+  }
+  .gedit-sidebar {
+    background: whitesmoke;
+    grid-area: 3 /1 / 5 /1;
+  }
+
+  .gedit-subnav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .gedit-header {
+    grid-column: 1;
+    grid-row: 1;
+    border: 1px solid grey;
+
+  }
+  .gedit-title {
+    grid-column: 2;
+    grid-row: 1;
+    border: 1px solid grey;
+  }
+  /*grid-area: row-start col-start row-end col-end;*/
+  .bt-bottom, .gedit-browser {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+    </style>
 </head>
 <body>
- 
-<div class="wrapper">
-    <div class="blog-container">
-            
-            <div class="folder-2">
-                <div class="mb-left">
-                    <div class="dropdwn">
-                        <button name="mb-open" class="button-open">Open<i class="fa-solid fa-angle-down"></i></button>
-                <div class="content">
-                    <div class="file">File</div>
-                    {% include postlist.html %}
-                </div>
-                    </div>
-                
-                <button name="button-new" class="button-new"><i class="fa-regular fa-square-plus"></i></button>
-            </div>
-                    <label name="title" class="title">{{ page.title }}</label>
-                    <div class="other-buttons">
-                        <div class="mb-right" name="menu-blog-right">
-                            <button name="save" class="mb-save">Save</button>
-                            <button name="mb-lines" class="mb-lines"><i class="fa-solid fa-bars"></i></button> 
-                        </div>
-                        
-                    <button name="mini"><i class="fa-solid fa-window-minimize"></i></button>
-                    <button name="max"><i class="fa-regular fa-window-maximize"></i></button>
-                    <button name="close"><i class="fa-solid fa-xmark"></i></button>
-                </div>                  
-                 </div>
-            <div class="content scrollable">
-                {{ content }}
-            </div>
-           
-            <div class="folder-6">
-                <div class="bt-bottom">
-                    <div class="blog-type pad">TXT<i class="fa-solid fa-angle-down"></i></div>
-                    <div class="width pad">Width: <i class="fa-solid fa-angle-down"></i></div> 
-                    <div class="line pad">Ln 1, Col 1</div> 
-                    <div class="down pad"><i class="fa-solid fa-angle-down"></i></div> 
-                    <div class="state pad">INS</div>
-            </div>
-            </div>
-        </div>
 
+    <div class="container">
+        <div class="gedit gedit-toolbar"> <h1>File Browser</h1><i class="fa-solid fa-caret-down xl"></i></div>
+        <div class="gedit gedit-browser"> <h1>gedit-factory.c</h1>
+            <div class="mb-right" name="menu-blog-right">
+                <button name="save" class="mb-save">Save</button>
+                <button name="mb-lines" class="mb-lines"><i class="fa-solid fa-bars xl"></i></button> 
+            </div>
+            <div class="other-buttons">   
+                <button name="mini"><i class="fa-solid fa-window-minimize"></i></button>
+                <button name="max"><i class="fa-regular fa-window-maximize"></i></button>
+                <button name="close"><i class="fa-solid fa-xmark"></i></button>
+            </div> 
+        </div>
+        <div class="gedit gedit-browser-subnav">
+
+                <button><i class="fa-solid fa-chevron-left xl"></i></button>
+                <button><i class="fa-solid fa-chevron-right xl"></i></button>
+                <button><i class="fa-solid fa-chevron-up xl"></i></button>
+                <select name="gedit" id="gedit-fake">
+                <option value="gedit">gedit</option>
+            </select>
+        </div>
+        <div class=" gedit-subnav">
+            <div class="gedit-header">gedit.c<i class="fa-solid fa-plus"></i></div>
+            <div class="gedit-title">{{ page.title }} <i class="fa-solid fa-plus"></i></div>
+        </div>
+        <div class="gedit gedit-sidebar"> {% include postlist.html %} </div>
+        <div class="gedit-content">{{ content }}</div>
+        <div class=" gedit gedit-bottom">
+            <div class="bt-bottom">
+                <div class="blog-type pad">TXT<i class="fa-solid fa-angle-down xl"></i></div>
+                <div class="width pad">Width: <i class="fa-solid fa-angle-down xl"></i></div> 
+                <div class="line pad">Ln 1, Col 1</div> 
+                <div class="down pad"><i class="fa-solid fa-angle-down"></i></div> 
+                <div class="state pad">INS</div>
+        </div>
+        </div>
+        
     </div>
-   {% include footer.html %}
+    
 </body>
 </html>
-
