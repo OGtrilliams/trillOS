@@ -1,7 +1,6 @@
 ---
-layout: page
-author: ted
-title: kiwi - the ballfruit
+layout: post
+title: kiwi - the furry fruit
 date:   2013-10-01 12:14:15 -0400
 ---
 Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the
