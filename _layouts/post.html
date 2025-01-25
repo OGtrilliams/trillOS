@@ -28,7 +28,7 @@ layout: page
   }
   .container {
     display: grid;
-    grid-template-rows: 70px 70px 500px 40px;
+    grid-template-rows: 50px 50px 500px 40px;
     grid-template-columns: 1fr 3fr;
     width: 85%;
     margin: 0 auto;
@@ -51,22 +51,31 @@ layout: page
   .gedit-sidebar {
     background: whitesmoke;
     grid-area: 3 /1 / 5 /1;
+    overflow-y: auto;
   }
 
   .gedit-subnav {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 0 10px;
+    border: 1px solid rgb(172, 172, 172);
+
   }
   .gedit-header {
     grid-column: 1;
     grid-row: 1;
-    border: 1px solid grey;
+    border-left: 0;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 2px 2px 3px 0px grey;
 
   }
   .gedit-title {
     grid-column: 2;
     grid-row: 1;
     border: 1px solid grey;
+    font-size: 18px;
+    font-weight: bold;
   }
   /*grid-area: row-start col-start row-end col-end;*/
   .bt-bottom, .gedit-browser {
@@ -74,17 +83,32 @@ layout: page
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
   }
+  .fa-plus{
+    display: flex;
+    float: right;
+  }
+  .other-buttons{
+    grid-column: 6;
+  }
+  .mb-right{
+    grid-column: 5;
+  }
+  .gedit-decotext{
+    font-weight: bold;
+    font-size: 22px;
+  }
+  .gedit-content {
+    padding: 10px;
+    overflow-y: auto;
+  }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="gedit gedit-toolbar"> <h1>File Browser</h1><i class="fa-solid fa-caret-down xl"></i></div>
-        <div class="gedit gedit-browser"> <h1>gedit-factory.c</h1>
-            <div class="mb-right" name="menu-blog-right">
-                <button name="save" class="mb-save">Save</button>
-                <button name="mb-lines" class="mb-lines"><i class="fa-solid fa-bars xl"></i></button> 
-            </div>
+        <div class="gedit gedit-toolbar"> <span class="gedit-decotext">File Browser</span><i class="fa-solid fa-caret-down xl"></i></div>
+        <div class="gedit gedit-browser"> <div class="gedit-decotext">gedit-factory.c</div>
+
             <div class="other-buttons">   
                 <button name="mini"><i class="fa-solid fa-window-minimize"></i></button>
                 <button name="max"><i class="fa-regular fa-window-maximize"></i></button>
@@ -101,8 +125,8 @@ layout: page
             </select>
         </div>
         <div class=" gedit-subnav">
-            <div class="gedit-header">gedit.c<i class="fa-solid fa-plus"></i></div>
-            <div class="gedit-title">{{ page.title }} <i class="fa-solid fa-plus"></i></div>
+            <div class="gedit-header">{{ page.title }}<i class="fa-solid fa-plus"></i></div>
+            <div class="gedit-title">gedit.c <i class="fa-solid fa-plus"></i></div>
         </div>
         <div class="gedit gedit-sidebar"> {% include postlist.html %} </div>
         <div class="gedit-content">{{ content }}</div>
